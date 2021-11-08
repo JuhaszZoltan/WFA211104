@@ -66,7 +66,18 @@ namespace WFA211104
 
         private void BtmInsert_Click(object sender, EventArgs e)
         {
-
+            using (var conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                new SqlCommand(
+                    "INSERT INTO Unikornis VALUES " +
+                    $"({cbTulajok.SelectedIndex + 1}, " +
+                    $"{cbFajtak.SelectedIndex + 1}, " +
+                    $"{nudSuly.Value}, " +
+                    $"{(rbCsodor.Checked ? 1 : 0)});",
+                    conn).ExecuteNonQuery();
+            }
+            this.Dispose();
         }
     }
 }

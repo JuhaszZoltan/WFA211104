@@ -128,8 +128,10 @@ namespace WFA211104
             this.dgvMain.Location = new System.Drawing.Point(90, 65);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.RowHeadersVisible = false;
+            this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMain.Size = new System.Drawing.Size(691, 309);
             this.dgvMain.TabIndex = 0;
+            this.dgvMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMain_CellClick);
             // 
             // Column1
             // 
